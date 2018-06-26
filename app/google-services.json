@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "181882803086",
+    "firebase_url": "https://sydlinaonline.firebaseio.com",
+    "project_id": "sydlinaonline",
+    "storage_bucket": "sydlinaonline.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:181882803086:android:02d2ce7458d22f6e",
+        "android_client_info": {
+          "package_name": "www.sydlinaonline.com.sydlinaonline"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "181882803086-9ge1dlgn1dd7j9nvd9fohdiu04e5h8ik.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "www.sydlinaonline.com.sydlinaonline",
+            "certificate_hash": "d66cbfd7fea8011410f74051fd1e91f40c3b7aa1"
+          }
+        },
+        {
+          "client_id": "181882803086-3qrs2ou70utlls54v18mh7qda95pm0ai.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiXR3p5JueOQhsl7ftqFEtj6-ndaWta0s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "181882803086-3qrs2ou70utlls54v18mh7qda95pm0ai.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:181882803086:android:2ac7eaedc687faaf",
+        "android_client_info": {
+          "package_name": "www.sydlinaonline.com.userpharmacy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "181882803086-3o583uea3sld36im3f597eqpktde7qr6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "www.sydlinaonline.com.userpharmacy",
+            "certificate_hash": "d66cbfd7fea8011410f74051fd1e91f40c3b7aa1"
+          }
+        },
+        {
+          "client_id": "181882803086-3qrs2ou70utlls54v18mh7qda95pm0ai.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiXR3p5JueOQhsl7ftqFEtj6-ndaWta0s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "181882803086-3qrs2ou70utlls54v18mh7qda95pm0ai.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
