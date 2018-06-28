@@ -36,7 +36,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     //vars
     private String email, name, password;
-    private User mUser;
+    //private User mUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
         mRegister = (Button) findViewById(R.id.btn_register);
         mEmail = (EditText) findViewById(R.id.input_email);
         mPassword = (EditText) findViewById(R.id.input_password);
-        mUser = new User();
+      //  mUser = new User();
         Log.d(TAG, "onCreate: started");
 
 

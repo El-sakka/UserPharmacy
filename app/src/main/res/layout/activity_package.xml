@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PackageActivity">
+
+    <LinearLayout
+        android:layout_below="@id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="2dp"
+
+        >
+        <EditText
+            android:id="@+id/edt_search_item1"
+            android:hint="item1"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:layout_margin="8dp"
+            android:background="@drawable/white_onclick_grey"
+            android:layout_weight="0.8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:src="@mipmap/ic_up"
+                android:id="@+id/btn_up1"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp" />
+            <TextView
+                android:gravity="center"
+                android:id="@+id/edt_quantity_1"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp" />
+            <ImageView
+                android:src="@mipmap/ic_down"
+                android:id="@+id/btn_down1"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="2dp"
+        >
+        <EditText
+            android:id="@+id/edt_search_item2"
+            android:hint="item2"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:layout_margin="8dp"
+            android:background="@drawable/white_onclick_grey"
+            android:layout_weight="0.9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:src="@mipmap/ic_up"
+                android:id="@+id/btn_up2"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp" />
+            <TextView
+                android:gravity="center"
+                android:id="@+id/edt_quantity_2"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp" />
+            <ImageView
+                android:src="@mipmap/ic_down"
+                android:id="@+id/btn_down2"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp" />
+    </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_below="@id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="2dp"
+        >
+        <EditText
+            android:id="@+id/edt_search_item3"
+            android:hint="item3"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:layout_margin="8dp"
+            android:background="@drawable/white_onclick_grey"
+            android:layout_weight="0.9"
+            android:layout_width="0dp"
+
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:src="@mipmap/ic_up"
+                android:id="@+id/btn_up3"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp" />
+            <TextView
+                android:gravity="center"
+                android:id="@+id/edt_quantity_3"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp" />
+            <ImageView
+                android:src="@mipmap/ic_down"
+                android:id="@+id/btn_down3"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+    <Button
+        android:text="Search"
+        android:background="@drawable/white_onclick_grey"
+        android:layout_gravity="center"
+        android:id="@+id/btn_search_package"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rc_search_package"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+</LinearLayout>

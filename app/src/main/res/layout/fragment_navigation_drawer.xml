@@ -85,6 +85,27 @@
                 android:layout_height="wrap_content" />
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:src="@mipmap/ic_package"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_search_package"
+                android:text="@string/search_package"
+                android:textSize="24sp"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
 

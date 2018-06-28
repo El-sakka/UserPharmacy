@@ -44,6 +44,7 @@ public class NavigationDrawerFragment extends Fragment {
     private TextView mPhrmacyTextView;
     private TextView mCategoryTextView;
     private TextView mMedicineTextView;
+    private TextView mPackageTextView;
     private Button mSignOut;
 
 
@@ -84,6 +85,7 @@ public class NavigationDrawerFragment extends Fragment {
         mPhrmacyTextView = (TextView)getActivity().findViewById(R.id.tv_phrmacy);
         mCategoryTextView = (TextView)getActivity().findViewById(R.id.tv_category);
         mMedicineTextView = (TextView)getActivity().findViewById(R.id.tv_medicine);
+        mPackageTextView = (TextView)getActivity().findViewById(R.id.tv_search_package);
 
         mSignOut = (Button)getActivity().findViewById(R.id.btn_sign_out);
         mSignOut.setOnClickListener(new View.OnClickListener() {
@@ -94,7 +96,18 @@ public class NavigationDrawerFragment extends Fragment {
                 startActivity(new Intent(getActivity(),MainActivity.class));
             }
         });
+        mPackageTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                redirectToPackageActivity();
+            }
+        });
 
+    }
+
+    private void redirectToPackageActivity(){
+        Intent intent = new Intent(getActivity(),PackageActivity.class);
+        startActivity(intent);
     }
 
 

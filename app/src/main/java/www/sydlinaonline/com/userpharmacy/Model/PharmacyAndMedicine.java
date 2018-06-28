@@ -12,6 +12,9 @@ public class PharmacyAndMedicine {
     public void setMedicineQuantity(String medicineQuantity) {
         this.medicineQuantity = medicineQuantity;
     }
+    public PharmacyAndMedicine(){
+
+    }
 
     public PharmacyAndMedicine(String pharmacyKey, String medicineKey,String medicineQuantity) {
         this.pharmacyKey = pharmacyKey;
