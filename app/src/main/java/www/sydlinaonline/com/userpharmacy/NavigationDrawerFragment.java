@@ -82,7 +82,6 @@ public class NavigationDrawerFragment extends Fragment {
 
         setupFirebase();
 
-        mPhrmacyTextView = (TextView)getActivity().findViewById(R.id.tv_phrmacy);
         mCategoryTextView = (TextView)getActivity().findViewById(R.id.tv_category);
         mMedicineTextView = (TextView)getActivity().findViewById(R.id.tv_medicine);
         mPackageTextView = (TextView)getActivity().findViewById(R.id.tv_search_package);
@@ -102,7 +101,18 @@ public class NavigationDrawerFragment extends Fragment {
                 redirectToPackageActivity();
             }
         });
+        mCategoryTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                redirectToCategory();
+            }
+        });
 
+    }
+
+    private void redirectToCategory(){
+        Intent intent = new Intent(getActivity(),CategoryActivity.class);
+        startActivity(intent);
     }
 
     private void redirectToPackageActivity(){

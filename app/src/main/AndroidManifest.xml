@@ -39,7 +39,8 @@
         <activity android:name=".CategoryActivity" />
         <activity android:name=".LocationActivity" />
         <activity android:name=".ReserveActivity" />
-        <activity android:name=".MedicineActivity"></activity>
+        <activity android:name=".MedicineActivity" />
+        <activity android:name=".RecycleAdapter.MedicineCategory"></activity>
     </application>
 
 </manifest>

@@ -129,13 +129,25 @@
 
         </LinearLayout>
     </LinearLayout>
-    <Button
-        android:text="Search"
-        android:background="@drawable/white_onclick_grey"
-        android:layout_gravity="center"
-        android:id="@+id/btn_search_package"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/imv_all_map"
+            android:src="@mipmap/ic_map"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_search_package"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:background="@drawable/white_onclick_grey"
+            android:text="Search" />
+    </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rc_search_package"
