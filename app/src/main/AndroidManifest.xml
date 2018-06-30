@@ -38,9 +38,10 @@
         <activity android:name=".PackageActivity" />
         <activity android:name=".CategoryActivity" />
         <activity android:name=".LocationActivity" />
-        <activity android:name=".ReserveActivity" />
         <activity android:name=".MedicineActivity" />
-        <activity android:name=".RecycleAdapter.MedicineCategory"></activity>
+        <activity android:name=".RecycleAdapter.MedicineCategory" />
+        <activity android:name=".Maps.CutomMapLocation" />
+        <activity android:name=".Reservation.ReservationActivity"></activity>
     </application>
 
 </manifest>

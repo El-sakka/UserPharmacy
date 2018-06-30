@@ -32,6 +32,7 @@ import java.util.Set;
 import www.sydlinaonline.com.userpharmacy.Model.Medicine;
 import www.sydlinaonline.com.userpharmacy.Model.PharmacyAndMedicine;
 import www.sydlinaonline.com.userpharmacy.Model.PharmacyInfo;
+import www.sydlinaonline.com.userpharmacy.Reservation.ReservationActivity;
 
 public class PackageActivity extends AppCompatActivity {
 
@@ -312,7 +313,7 @@ public class PackageActivity extends AppCompatActivity {
         final DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Database")
                 .child("Search");
         for(int i=0;i<phrmacyKeyList.size();i++){
-            Query query = mRefPharmacy.orderByChild("pharmacyKey");
+            Query query = mRefPharmacy.orderByChild("pharmacyName");
             final int finalI = i;
             query.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
@@ -320,10 +321,12 @@ public class PackageActivity extends AppCompatActivity {
                     for(DataSnapshot snapshot : dataSnapshot.getChildren()){
                         PharmacyInfo pharmacyInfo = snapshot.getValue(PharmacyInfo.class);
                         Log.d(TAG, "onDataChange: finalI: " +finalI);
-                        if(phrmacyKeyList.get(finalI).equals(pharmacyInfo.getPharmacyKey()) ){
+
+                        if(phrmacyKeyList.get(finalI).equals(pharmacyInfo.getPharmacyName()) ){
                             reference.push().setValue(pharmacyInfo);
                             Log.d(TAG, "onDataChange: phramacy name: "+pharmacyInfo.getPharmacyName());
                         }
+
                     }
                 }
                 @Override
@@ -374,8 +377,7 @@ public class PackageActivity extends AppCompatActivity {
                         viewHolder.mPhramacyDoneAllImageView.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Intent intent = new Intent(PackageActivity.this,ReserveActivity.class);
-                              //  intent.putParcelableArrayListExtra(PHRAMACY_QUANTITY, (ArrayList<? extends Parcelable>) itemQuantityList);
+                                Intent intent = new Intent(PackageActivity.this,ReservationActivity.class);
                                 startActivity(intent);
                             }
                         });

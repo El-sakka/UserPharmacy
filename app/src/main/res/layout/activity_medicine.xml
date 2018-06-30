@@ -1,9 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MedicineActivity">
+    android:layout_margin="8dp"
+    >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:hint="Medicine"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:padding="8dp"
+            android:textStyle="bold"
+            android:id="@+id/tv_detail_medicine_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-</android.support.constraint.ConstraintLayout>
+        <ImageView
+            android:scaleType="fitXY"
+            android:id="@+id/tv_detail_medicine_image"
+            android:layout_width="match_parent"
+            android:layout_height="240dp" />
+        <TextView
+            android:hint="discroption"
+            android:textSize="18sp"
+            android:padding="8dp"
+            android:gravity="center"
+            android:id="@+id/tv_detail_medicine_desciption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_detail_medicine_price"
+            android:padding="8dp"
+            android:textSize="32sp"
+            android:gravity="center"
+            android:hint="price L.E"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@mipmap/ic_down"
+                android:id="@+id/imv_detail_medicine_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:hint="0"
+                android:id="@+id/tv_detail_medicine_quantity"
+                android:textSize="24sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/imv_detail_medicine_up"
+                android:src="@mipmap/ic_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/imv_detail_medicine_done"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_gravity="right"
+            android:src="@mipmap/ic_done_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

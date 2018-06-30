@@ -11,4 +11,6 @@
     <string name="phrmacy">Phrmacy</string>
     <string name="medicine">Medicine</string>
     <string name="search_package">Search Package</string>
+    <string name="reservation_code">Reservation Code</string>
+    <string name="confirm_reservation">Confirm Reservation</string>
 </resources>

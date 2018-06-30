@@ -78,6 +78,8 @@ public class MedicineCategory extends AppCompatActivity {
     private void getMedicines(final ArrayList<String> list) {
         DatabaseReference mRef = FirebaseDatabase.getInstance().getReference()
                 .child("Database").child("Medicine");
+        mRef.keepSynced(true);
+        final int size = list.size();
         for (int i = 0; i < list.size(); i++) {
             final int count = i;
             Query query = mRef.orderByChild("name").startAt(list.get(i)).endAt(list.get(i) + "\uf8ff");
@@ -90,14 +92,13 @@ public class MedicineCategory extends AppCompatActivity {
                         medicineObjects.add(model);
                         Log.d(TAG, "onDataChange: koko ya7 "+model.getName());
                         //Log.d(TAG, "onDataChange: listSizesssssssss: "+medicineObjects.size());
-                        if(count==1){
+                        if(count== size-1){
                             Log.d(TAG, "onDataChange: listSizesssssssss: "+medicineObjects.size());
                             setRecycleView(medicineObjects);
                         }
                     }
                     //Log.d(TAG, "onDataChange: listSizesssssssss: "+medicineObjects.size());
                     //setRecycleView(medicineObjects);
-
                 }
 
                 @Override
