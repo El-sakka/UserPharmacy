@@ -13,4 +13,5 @@
     <string name="search_package">Search Package</string>
     <string name="reservation_code">Reservation Code</string>
     <string name="confirm_reservation">Confirm Reservation</string>
+    <string name="most_popular">Most popular</string>
 </resources>

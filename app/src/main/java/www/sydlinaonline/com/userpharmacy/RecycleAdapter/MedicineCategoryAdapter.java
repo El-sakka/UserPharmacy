@@ -76,13 +76,14 @@ public class MedicineCategoryAdapter extends RecyclerView.Adapter<MedicineCatego
             mView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Bundle bundle = new Bundle();
-                    bundle.putString(NAME_KEY,medName.getText().toString());
-                    bundle.putString(PRICE_KEY,medPrice.getText().toString());
-                    bundle.putString(DES_KEY,medDes.getText().toString());
-                    bundle.putString(IMAGE_KEY,imageUrl);
                     Intent intent = new Intent(context, MedicineActivity.class);
-                    intent.putExtra(BUNDLE_KEY,bundle);
+                   // Bundle bundle = new Bundle();
+                    intent.putExtra("Class","B");
+                    intent.putExtra(NAME_KEY,medName.getText().toString());
+                    intent.putExtra(PRICE_KEY,medPrice.getText().toString());
+                    intent.putExtra(DES_KEY,medDes.getText().toString());
+                    intent.putExtra(IMAGE_KEY,imageUrl);
+                    //intent.putExtra(BUNDLE_KEY,bundle);
                     context.startActivity(intent);
                 }
             });

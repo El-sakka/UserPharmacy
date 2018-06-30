@@ -37,6 +37,18 @@ public class MedicineActivity extends AppCompatActivity {
     private static final String MEDICINE_KEY = "medicine";
 
 
+    private static final String IMAGE2_KEY = "image_key";
+    private static final String DES2_KEY = "des_key";
+    private static final String PRICE2_KEY = "price_key";
+    private static final String NAME2_KEY = "name_key";
+
+
+    private static final String IMAGE3_KEY = "image3_key";
+    private static final String DES3_KEY = "des3_key";
+    private static final String PRICE3_KEY = "price3_key";
+    private static final String NAME3_KEY = "name3_key";
+
+
 
     private TextView medicineName;
     private TextView medicinePrice;
@@ -97,13 +109,32 @@ public class MedicineActivity extends AppCompatActivity {
 
 
     private void getDataIntent(){
-        Intent intent = getIntent();
-        bundle  = intent.getBundleExtra(BUNDLE_KEY);
 
-        medName = bundle.getString(NAME_KEY);
-        medDes = bundle.getString(DES_KEY);
-        medPrice = bundle.getString(PRICE_KEY);
-        imageUrl = bundle.getString(IMAGE_KEY);
+        Intent intent = getIntent();
+        if(intent != null){
+            String className = getIntent().getStringExtra("Class");
+            if(className.equals("A")){
+                medName = intent.getStringExtra(NAME2_KEY);
+                medDes = intent.getStringExtra(DES2_KEY);
+                medPrice = intent.getStringExtra(PRICE2_KEY);
+                imageUrl = intent.getStringExtra(IMAGE2_KEY);
+            }
+            else if(className.equals("B")){
+                //bundle  = intent.getBundleExtra(BUNDLE_KEY);
+                medName = intent.getStringExtra(NAME_KEY);
+                medDes = intent.getStringExtra(DES_KEY);
+                medPrice = intent.getStringExtra(PRICE_KEY);
+                imageUrl = intent.getStringExtra(IMAGE_KEY);
+            }
+            else if(className.equals("C")){
+                medName = intent.getStringExtra(NAME3_KEY);
+                medDes = intent.getStringExtra(DES3_KEY);
+                medPrice = intent.getStringExtra(PRICE3_KEY);
+                imageUrl = intent.getStringExtra(IMAGE3_KEY);
+            }
+        }
+
+
 
         medicineName.setText(medName);
         medicineDescription.setText(medDes);
@@ -139,7 +170,7 @@ public class MedicineActivity extends AppCompatActivity {
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     for(DataSnapshot snapshot : dataSnapshot.getChildren()){
                         PharmacyAndMedicine pharmacyAndMedicine = snapshot.getValue(PharmacyAndMedicine.class);
-                        if(quantity >= Integer.valueOf(pharmacyAndMedicine.getMedicineQuantity()));
+                        if(quantity <= Integer.valueOf(pharmacyAndMedicine.getMedicineQuantity()));
                             phramcyKeys.add(pharmacyAndMedicine.getPharmacyKey());
                     }
                     Log.d(TAG, "onDataChange: ZZZZZZ:" +phramcyKeys.size());
@@ -183,6 +214,8 @@ public class MedicineActivity extends AppCompatActivity {
                 }
             });
         }
+
+
     }
 
     void redirectToCustomMap(ArrayList<PharmacyInfo> list){

@@ -101,21 +101,10 @@ public class LocationActivity extends AppCompatActivity {
                 }
                 mGoogleMap.setMyLocationEnabled(true);
 
-               /* mGoogleMap.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
-                    @Override
-                    public void onMapLongClick(LatLng latLng) {
-                        mGoogleMap.addMarker(new MarkerOptions().position(latLng).title("Phramcy")
-                                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
-                        Log.d(TAG, "onMapLongClick: lat: " + latLng.latitude + " lng: " + latLng.longitude);
-                        mLatLng = latLng;
-                    }
-                });*/
-
-
-
                MarkerOptions options = new MarkerOptions();
                options.position(mLatLng).title(phramcyName).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
 
+               mGoogleMap.addMarker(options);
 
             }
         });

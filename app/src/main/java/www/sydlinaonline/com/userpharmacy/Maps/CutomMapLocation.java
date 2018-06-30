@@ -156,6 +156,7 @@ public class CutomMapLocation extends AppCompatActivity {
                     public void onInfoWindowClick(Marker marker) {
                         String phramcyName = marker.getTitle();
                         Intent intent = new Intent(CutomMapLocation.this, ReservationActivity.class);
+                        intent.putExtra("Class","Custom");
                         intent.putExtra(PHRMACY_KEY,phramcyName);
                         intent.putExtra(QUANTITY_KEY,quatity);
                         intent.putExtra(MEDICINE_KEY,medicineName);

@@ -8,146 +8,151 @@
     tools:context=".PackageActivity">
 
     <LinearLayout
-        android:layout_below="@id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/app_bar"
         android:orientation="horizontal"
         android:padding="2dp"
 
         >
+
         <EditText
             android:id="@+id/edt_search_item1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="0.8"
+            android:background="@drawable/white_onclick_grey"
             android:hint="item1"
             android:padding="16dp"
-            android:textSize="16sp"
-            android:layout_margin="8dp"
-            android:background="@drawable/white_onclick_grey"
-            android:layout_weight="0.8"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:textSize="16sp" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <ImageView
-                android:src="@mipmap/ic_up"
                 android:id="@+id/btn_up1"
                 android:layout_width="wrap_content"
-                android:layout_height="24dp" />
+                android:layout_height="24dp"
+                android:src="@mipmap/ic_up" />
+
             <TextView
-                android:gravity="center"
                 android:id="@+id/edt_quantity_1"
-                android:layout_gravity="center"
                 android:layout_width="wrap_content"
-                android:layout_height="24dp" />
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:gravity="center" />
+
             <ImageView
-                android:src="@mipmap/ic_down"
                 android:id="@+id/btn_down1"
                 android:layout_width="wrap_content"
-                android:layout_height="24dp" />
+                android:layout_height="24dp"
+                android:src="@mipmap/ic_down" />
 
         </LinearLayout>
     </LinearLayout>
+
     <LinearLayout
-        android:layout_below="@id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/app_bar"
         android:orientation="horizontal"
-        android:padding="2dp"
-        >
+        android:padding="2dp">
+
         <EditText
             android:id="@+id/edt_search_item2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="0.9"
+            android:background="@drawable/white_onclick_grey"
             android:hint="item2"
             android:padding="16dp"
-            android:textSize="16sp"
-            android:layout_margin="8dp"
-            android:background="@drawable/white_onclick_grey"
-            android:layout_weight="0.9"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:textSize="16sp" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <ImageView
-                android:src="@mipmap/ic_up"
                 android:id="@+id/btn_up2"
                 android:layout_width="wrap_content"
-                android:layout_height="24dp" />
+                android:layout_height="24dp"
+                android:src="@mipmap/ic_up" />
+
             <TextView
-                android:gravity="center"
                 android:id="@+id/edt_quantity_2"
-                android:layout_gravity="center"
                 android:layout_width="wrap_content"
-                android:layout_height="24dp" />
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:gravity="center" />
+
             <ImageView
-                android:src="@mipmap/ic_down"
                 android:id="@+id/btn_down2"
                 android:layout_width="wrap_content"
-                android:layout_height="24dp" />
+                android:layout_height="24dp"
+                android:src="@mipmap/ic_down" />
+        </LinearLayout>
     </LinearLayout>
-    </LinearLayout>
+
     <LinearLayout
         android:id="@+id/linear_layout"
-        android:layout_below="@id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/app_bar"
         android:orientation="horizontal"
-        android:padding="2dp"
-        >
+        android:padding="2dp">
+
         <EditText
             android:id="@+id/edt_search_item3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="0.9"
+            android:background="@drawable/white_onclick_grey"
             android:hint="item3"
             android:padding="16dp"
-            android:textSize="16sp"
-            android:layout_margin="8dp"
-            android:background="@drawable/white_onclick_grey"
-            android:layout_weight="0.9"
-            android:layout_width="0dp"
 
-            android:layout_height="wrap_content" />
+            android:textSize="16sp" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <ImageView
-                android:src="@mipmap/ic_up"
                 android:id="@+id/btn_up3"
                 android:layout_width="wrap_content"
-                android:layout_height="24dp" />
+                android:layout_height="24dp"
+                android:src="@mipmap/ic_up" />
+
             <TextView
-                android:gravity="center"
                 android:id="@+id/edt_quantity_3"
-                android:layout_gravity="center"
                 android:layout_width="wrap_content"
-                android:layout_height="24dp" />
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:gravity="center" />
+
             <ImageView
-                android:src="@mipmap/ic_down"
                 android:id="@+id/btn_down3"
                 android:layout_width="wrap_content"
-                android:layout_height="24dp" />
+                android:layout_height="24dp"
+                android:src="@mipmap/ic_down" />
 
         </LinearLayout>
     </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/imv_all_map"
-            android:src="@mipmap/ic_map"
-            android:visibility="gone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
 
-        <Button
-            android:id="@+id/btn_search_package"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:background="@drawable/white_onclick_grey"
-            android:text="Search" />
-    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_search_package"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/white_onclick_grey"
+        android:text="Search" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rc_search_package"

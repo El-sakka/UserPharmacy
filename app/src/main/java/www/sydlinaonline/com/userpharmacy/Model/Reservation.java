@@ -9,6 +9,10 @@ public class Reservation {
     private String date;
     private String medName;
 
+    public Reservation(){
+
+    }
+
     public Reservation(String phrmacyName, String userEmail, String code, String location,String quantity,String date,String medName) {
         this.phrmacyName = phrmacyName;
         this.userEmail = userEmail;

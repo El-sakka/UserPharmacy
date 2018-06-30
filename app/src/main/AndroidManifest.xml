@@ -41,7 +41,8 @@
         <activity android:name=".MedicineActivity" />
         <activity android:name=".RecycleAdapter.MedicineCategory" />
         <activity android:name=".Maps.CutomMapLocation" />
-        <activity android:name=".Reservation.ReservationActivity"></activity>
+        <activity android:name=".Reservation.ReservationActivity" />
+        <activity android:name=".MostPopularActivity"></activity>
     </application>
 
 </manifest>

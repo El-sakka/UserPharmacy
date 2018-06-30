@@ -37,6 +37,9 @@ import www.sydlinaonline.com.userpharmacy.Reservation.ReservationActivity;
 public class PackageActivity extends AppCompatActivity {
 
     private static final String TAG = "PackageActivity";
+    private static final String ITEM_LIST = "item_list";
+    private static final String QUANTITY_LIST = "quantity_list";
+    private static final String PHRMACY_NAME = "name";
 
     private EditText searchEditText1;
     private EditText searchEditText2;
@@ -63,9 +66,8 @@ public class PackageActivity extends AppCompatActivity {
 
 
     private ArrayList<String> itemsList;
-    private ArrayList<String> quantityList;
+    private ArrayList<Integer> quantityList;
     final ArrayList<String> list1 = new ArrayList<>();
-    private ArrayList<String> medicineNameList;
     private ArrayList<Pair<String, Integer>> itemQuantityList;
     private Map<String, ArrayList<String>> map;
 
@@ -83,6 +85,11 @@ public class PackageActivity extends AppCompatActivity {
     private static final String PHRMACY_KEY ="phrmacy";
     private static final String PHRAMACY_QUANTITY="phramcy_quantity";
 
+    private String item1;
+    private String item2;
+    private String item3;
+
+    private ArrayList<String> items;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -144,9 +151,9 @@ public class PackageActivity extends AppCompatActivity {
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String item1 = searchEditText1.getText().toString().trim();
-                String item2 = searchEditText2.getText().toString().trim();
-                String item3 = searchEditText3.getText().toString().trim();
+                item1 = searchEditText1.getText().toString().trim();
+                item2 = searchEditText2.getText().toString().trim();
+                item3 = searchEditText3.getText().toString().trim();
 
                 Pair<String, Integer> p1 = new Pair<>(item1, counter1);
                 Pair<String, Integer> p2 = new Pair<>(item2, counter2);
@@ -156,11 +163,23 @@ public class PackageActivity extends AppCompatActivity {
                 itemQuantityList.add(p2);
                 itemQuantityList.add(p3);
 
+                // to send them to reservation Activity
+                itemsList.add(item1);
+                itemsList.add(item2);
+                itemsList.add(item3);
+
+                quantityList.add(counter1);
+                quantityList.add(counter2);
+                quantityList.add(counter3);
+
+
                 for (int i = 0; i < itemQuantityList.size(); i++) {
                     if (itemQuantityList.get(i).first == "") {
                         itemQuantityList.remove(i);
+                        itemsList.remove(i);
                     } else if (itemQuantityList.get(i).second.equals(0)) {
                         itemQuantityList.remove(i);
+                        quantityList.remove(i);
                     }
                 }
 
@@ -227,7 +246,7 @@ public class PackageActivity extends AppCompatActivity {
         if (counter <= 0) {
             // do nothing
         } else {
-            quantityList.add(counter + "");
+            quantityList.add(counter );
         }
     }
 
@@ -378,6 +397,10 @@ public class PackageActivity extends AppCompatActivity {
                             @Override
                             public void onClick(View v) {
                                 Intent intent = new Intent(PackageActivity.this,ReservationActivity.class);
+                                intent.putExtra("Class","Package");
+                                intent.putExtra(PHRMACY_NAME,model.getPharmacyName());
+                                intent.putStringArrayListExtra(ITEM_LIST,itemsList);
+                                intent.putIntegerArrayListExtra(QUANTITY_LIST,quantityList);
                                 startActivity(intent);
                             }
                         });

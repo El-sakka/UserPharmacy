@@ -45,6 +45,12 @@ public class PharmacyActivity extends AppCompatActivity {
 
     private static final String TAG = "PharmacyActivity";
 
+    private static final String CLICKED_KEY = "clicked_key";
+    private static final String IMAGE_KEY = "image_key";
+    private static final String DES_KEY = "des_key";
+    private static final String PRICE_KEY = "price_key";
+    private static final String NAME_KEY = "name_key";
+
     //views
     private EditText mSearchEditText;
     private ImageView mSearchImageView;
@@ -119,14 +125,30 @@ public class PharmacyActivity extends AppCompatActivity {
                 query
         ) {
             @Override
-            protected void populateViewHolder(medicineViewHolder viewHolder, Medicine model, int position) {
+            protected void populateViewHolder(medicineViewHolder viewHolder, final Medicine model, int position) {
                 //        Picasso.with(mContext).load(poster).into(holder.mPosterImageView);
                 Log.d(TAG, "populateViewHolder: ");
                 viewHolder.mMedicineNameTextView.setText(model.getName());
                 viewHolder.mMedicineDescriptionTextView.setText(model.getDescription());
                 viewHolder.mMedicinePriceTextView.setText(model.getPrice()+"$");
 
-                Picasso.with(getApplicationContext()).load(model.getImageUrl()).into(viewHolder.mMedicineImageView);
+                String imageUrl = model.getImageUrl();
+                if(!imageUrl.equals(""))
+                    Picasso.with(getApplicationContext()).load(imageUrl).into(viewHolder.mMedicineImageView);
+                
+                viewHolder.view.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent  = new Intent(PharmacyActivity.this,MedicineActivity.class);
+                        intent.putExtra("Class","A");
+                        intent.putExtra(NAME_KEY,model.getName());
+                        intent.putExtra(PRICE_KEY,model.getPrice());
+                        intent.putExtra(DES_KEY,model.getDescription());
+                        intent.putExtra(IMAGE_KEY,model.getImageUrl());
+                        //intent.putExtra(CLICKED_KEY,bundle);
+                        startActivity(intent);
+                    }
+                });
             }
         };
         mRecyclerView.setAdapter(adapter);
@@ -134,13 +156,14 @@ public class PharmacyActivity extends AppCompatActivity {
 
 
     public static class medicineViewHolder extends RecyclerView.ViewHolder{
-
+        public View view;
         public TextView mMedicineNameTextView;
         public TextView mMedicinePriceTextView;
         public TextView mMedicineDescriptionTextView;
         public ImageView mMedicineImageView;
         public medicineViewHolder(View itemView) {
             super(itemView);
+            view = itemView;
             mMedicineNameTextView = (TextView)itemView.findViewById(R.id.tv_medicine_name);
             mMedicinePriceTextView = (TextView)itemView.findViewById(R.id.tv_medicine_price);
             mMedicineDescriptionTextView = (TextView)itemView.findViewById(R.id.tv_medicine_description);

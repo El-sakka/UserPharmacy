@@ -10,17 +10,27 @@ public class Medicine {
     String imageUrl;
     String pharmacyKey;
     String medicineKey;
+    Integer mostSales;
 
     public Medicine(){
 
     }
 
-    public Medicine(String name, String price, String description, String imageUrl, String medicineKey) {
+    public Medicine(String name, String price, String description, String imageUrl, String medicineKey,Integer mostSales) {
         this.name = name;
         this.price = price;
         this.description = description;
         this.imageUrl = imageUrl;
         this.medicineKey = medicineKey;
+        this.mostSales = mostSales;
+    }
+
+    public Integer getMostSales() {
+        return mostSales;
+    }
+
+    public void setMostSales(int mostSales) {
+        this.mostSales = mostSales;
     }
 
     public String getMedicineKey() {

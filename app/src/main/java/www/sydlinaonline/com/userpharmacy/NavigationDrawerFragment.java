@@ -41,10 +41,9 @@ public class NavigationDrawerFragment extends Fragment {
 
 
     // views
-    private TextView mPhrmacyTextView;
     private TextView mCategoryTextView;
-    private TextView mMedicineTextView;
     private TextView mPackageTextView;
+    private TextView mPopularTextView;
     private Button mSignOut;
 
 
@@ -83,7 +82,7 @@ public class NavigationDrawerFragment extends Fragment {
         setupFirebase();
 
         mCategoryTextView = (TextView)getActivity().findViewById(R.id.tv_category);
-        mMedicineTextView = (TextView)getActivity().findViewById(R.id.tv_medicine);
+        mPopularTextView = (TextView)getActivity().findViewById(R.id.tv_most_popular);
         mPackageTextView = (TextView)getActivity().findViewById(R.id.tv_search_package);
 
         mSignOut = (Button)getActivity().findViewById(R.id.btn_sign_out);
@@ -108,6 +107,18 @@ public class NavigationDrawerFragment extends Fragment {
             }
         });
 
+        mPopularTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                redirectToPopular();
+            }
+        });
+
+    }
+
+    private void redirectToPopular(){
+        Intent intent = new Intent(getActivity(),MostPopularActivity.class);
+        startActivity(intent);
     }
 
     private void redirectToCategory(){
